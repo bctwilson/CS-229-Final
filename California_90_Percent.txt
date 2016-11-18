@@ -1,0 +1,1092 @@
+Current State: California
+Current FIPS: 060014025002
+Percent Low Income 0.96149068323
+Percentile PM 2.5: 60.4404652096
+Percentile Ozone: 0.329395900036
+
+Current State: California
+Current FIPS: 060014071011
+Percent Low Income 0.916824914546
+Percentile PM 2.5: 56.6735790612
+Percentile Ozone: 1.55790385146
+
+Current State: California
+Current FIPS: 060014226001
+Percent Low Income 1
+Percentile PM 2.5: 55.7478214976
+Percentile Ozone: 2.04419592915
+
+Current State: California
+Current FIPS: 060014096004
+Percent Low Income 0.972677595628
+Percentile PM 2.5: 56.2744079962
+Percentile Ozone: 2.24716706578
+
+Current State: California
+Current FIPS: 060830024023
+Percent Low Income 1
+Percentile PM 2.5: 19.1072493412
+Percentile Ozone: 7.41585681112
+
+Current State: California
+Current FIPS: 060470010033
+Percent Low Income 0.963005780347
+Percentile PM 2.5: 65.8661296691
+Percentile Ozone: 97.7340688192
+
+Current State: California
+Current FIPS: 060830027022
+Percent Low Income 0.90767903365
+Percentile PM 2.5: 13.3214407529
+Percentile Ozone: 7.73540918761
+
+Current State: California
+Current FIPS: 060830027065
+Percent Low Income 0.99115913556
+Percentile PM 2.5: 13.6518992949
+Percentile Ozone: 7.97523377815
+
+Current State: California
+Current FIPS: 060470016011
+Percent Low Income 0.966789667897
+Percentile PM 2.5: 68.5211672654
+Percentile Ozone: 97.7327645345
+
+Current State: California
+Current FIPS: 060470013023
+Percent Low Income 0.925421010425
+Percentile PM 2.5: 67.296435715
+Percentile Ozone: 97.7448961741
+
+Current State: California
+Current FIPS: 060330007023
+Percent Low Income 1
+Percentile PM 2.5: 0.864222677763
+Percentile Ozone: 10.9916048285
+
+Current State: California
+Current FIPS: 060830029243
+Percent Low Income 0.960829493088
+Percentile PM 2.5: 16.101743097
+Percentile Ozone: 14.2352001992
+
+Current State: California
+Current FIPS: 060552009001
+Percent Low Income 0.990740740741
+Percentile PM 2.5: 10.5286784998
+Percentile Ozone: 8.46401588365
+
+Current State: California
+Current FIPS: 060411242001
+Percent Low Income 1
+Percentile PM 2.5: 33.0172094401
+Percentile Ozone: 0.696148405033
+
+Current State: California
+Current FIPS: 060730039012
+Percent Low Income 0.955213903743
+Percentile PM 2.5: 62.4563345484
+Percentile Ozone: 18.2442648384
+
+Current State: California
+Current FIPS: 060730039021
+Percent Low Income 0.956310679612
+Percentile PM 2.5: 60.4084918325
+Percentile Ozone: 17.2535356555
+
+Current State: California
+Current FIPS: 060730202133
+Percent Low Income 0.901256732496
+Percentile PM 2.5: 46.3752112005
+Percentile Ozone: 70.8597515049
+
+Current State: California
+Current FIPS: 060730028012
+Percent Low Income 0.97571942446
+Percentile PM 2.5: 68.1323135652
+Percentile Ozone: 30.2421877396
+
+Current State: California
+Current FIPS: 060730024022
+Percent Low Income 0.914826498423
+Percentile PM 2.5: 65.1614885953
+Percentile Ozone: 23.4826945769
+
+Current State: California
+Current FIPS: 060730023023
+Percent Low Income 0.906206252916
+Percentile PM 2.5: 65.7666200678
+Percentile Ozone: 24.7729494215
+
+Current State: California
+Current FIPS: 060730027073
+Percent Low Income 0.903799514956
+Percentile PM 2.5: 67.4965488234
+Percentile Ozone: 25.4778116213
+
+Current State: California
+Current FIPS: 060730027082
+Percent Low Income 0.918326693227
+Percentile PM 2.5: 67.404328562
+Percentile Ozone: 26.3792951588
+
+Current State: California
+Current FIPS: 060730100054
+Percent Low Income 0.974038461538
+Percentile PM 2.5: 56.513226936
+Percentile Ozone: 9.07896254694
+
+Current State: California
+Current FIPS: 060790109011
+Percent Low Income 1
+Percentile PM 2.5: 20.8699819174
+Percentile Ozone: 8.57201913073
+
+Current State: California
+Current FIPS: 061070011001
+Percent Low Income 0.922392886015
+Percentile PM 2.5: 99.7961671561
+Percentile Ozone: 98.5495021276
+
+Current State: California
+Current FIPS: 061070038022
+Percent Low Income 0.995967741935
+Percentile PM 2.5: 90.1345729447
+Percentile Ozone: 99.4742452475
+
+Current State: California
+Current FIPS: 061130101014
+Percent Low Income 0.962886597938
+Percentile PM 2.5: 56.6277174122
+Percentile Ozone: 69.6024763395
+
+Current State: California
+Current FIPS: 061070029013
+Percent Low Income 0.971929824561
+Percentile PM 2.5: 99.8013110208
+Percentile Ozone: 98.3723340102
+
+Current State: California
+Current FIPS: 060816121004
+Percent Low Income 0.976331360947
+Percentile PM 2.5: 34.2018181945
+Percentile Ozone: 4.28781846669
+
+Current State: California
+Current FIPS: 060390008004
+Percent Low Income 0.948
+Percentile PM 2.5: 93.3141219078
+Percentile Ozone: 97.7929430293
+
+Current State: California
+Current FIPS: 061070044002
+Percent Low Income 0.931106471816
+Percentile PM 2.5: 97.9306846207
+Percentile Ozone: 98.2966070078
+
+Current State: California
+Current FIPS: 061070045003
+Percent Low Income 0.977000919963
+Percentile PM 2.5: 85.3772070721
+Percentile Ozone: 99.1995778533
+
+Current State: California
+Current FIPS: 061070017012
+Percent Low Income 0.95785440613
+Percentile PM 2.5: 99.7864620398
+Percentile Ozone: 98.571911401
+
+Current State: California
+Current FIPS: 061070016021
+Percent Low Income 0.95802919708
+Percentile PM 2.5: 99.5176028651
+Percentile Ozone: 98.9388446496
+
+Current State: California
+Current FIPS: 060530009002
+Percent Low Income 0.937751004016
+Percentile PM 2.5: 16.3660976856
+Percentile Ozone: 6.89832116957
+
+Current State: California
+Current FIPS: 060530007022
+Percent Low Income 0.963333333333
+Percentile PM 2.5: 16.6145556319
+Percentile Ozone: 7.0384883073
+
+Current State: California
+Current FIPS: 060530005011
+Percent Low Income 0.954182575495
+Percentile PM 2.5: 16.4226209264
+Percentile Ozone: 6.83150531444
+
+Current State: California
+Current FIPS: 060750176011
+Percent Low Income 1
+Percentile PM 2.5: 48.3469097384
+Percentile Ozone: 0.26353912572
+
+Current State: California
+Current FIPS: 060990016042
+Percent Low Income 0.936921783011
+Percentile PM 2.5: 57.4977362599
+Percentile Ozone: 86.5879764249
+
+Current State: California
+Current FIPS: 060250104005
+Percent Low Income 0.941641337386
+Percentile PM 2.5: 12.8630952156
+Percentile Ozone: 82.5817300829
+
+Current State: California
+Current FIPS: 060990016031
+Percent Low Income 0.909850746269
+Percentile PM 2.5: 56.7935136645
+Percentile Ozone: 86.3817805622
+
+Current State: California
+Current FIPS: 060990021001
+Percent Low Income 0.930862831858
+Percentile PM 2.5: 60.788063454
+Percentile Ozone: 88.3479551853
+
+Current State: California
+Current FIPS: 060990024022
+Percent Low Income 1
+Percentile PM 2.5: 59.006634501
+Percentile Ozone: 87.5776090966
+
+Current State: California
+Current FIPS: 060250104002
+Percent Low Income 0.901987662783
+Percentile PM 2.5: 12.8630952156
+Percentile Ozone: 82.5817300829
+
+Current State: California
+Current FIPS: 060250121003
+Percent Low Income 0.946366782007
+Percentile PM 2.5: 48.3376537129
+Percentile Ozone: 62.7388361185
+
+Current State: California
+Current FIPS: 060250121002
+Percent Low Income 0.911024459412
+Percentile PM 2.5: 48.3376537129
+Percentile Ozone: 62.7388361185
+
+Current State: California
+Current FIPS: 060670022002
+Percent Low Income 0.97458703939
+Percentile PM 2.5: 59.3776847953
+Percentile Ozone: 69.0218266668
+
+Current State: California
+Current FIPS: 060670053011
+Percent Low Income 0.992405063291
+Percentile PM 2.5: 62.1054594717
+Percentile Ozone: 72.2521997487
+
+Current State: California
+Current FIPS: 060670091101
+Percent Low Income 0.907630522088
+Percentile PM 2.5: 65.8920877044
+Percentile Ozone: 82.828844339
+
+Current State: California
+Current FIPS: 061030011002
+Percent Low Income 0.906493506494
+Percentile PM 2.5: 7.32349456015
+Percentile Ozone: 66.4510556373
+
+Current State: California
+Current FIPS: 060590761022
+Percent Low Income 1
+Percentile PM 2.5: 87.3335463133
+Percentile Ozone: 57.0424265634
+
+Current State: California
+Current FIPS: 060590745013
+Percent Low Income 0.974006116208
+Percentile PM 2.5: 80.1885417413
+Percentile Ozone: 58.2638747682
+
+Current State: California
+Current FIPS: 060190008001
+Percent Low Income 0.913595933926
+Percentile PM 2.5: 99.9888333032
+Percentile Ozone: 98.4838290279
+
+Current State: California
+Current FIPS: 060190002001
+Percent Low Income 0.932984293194
+Percentile PM 2.5: 99.997619721
+Percentile Ozone: 98.6215110227
+
+Current State: California
+Current FIPS: 060190034002
+Percent Low Income 0.903846153846
+Percentile PM 2.5: 99.9629618945
+Percentile Ozone: 98.7447263663
+
+Current State: California
+Current FIPS: 060190001001
+Percent Low Income 0.908108108108
+Percentile PM 2.5: 99.9713073632
+Percentile Ozone: 98.7137830648
+
+Current State: California
+Current FIPS: 060190002003
+Percent Low Income 0.910024154589
+Percentile PM 2.5: 99.997619721
+Percentile Ozone: 98.6215110227
+
+Current State: California
+Current FIPS: 060190013043
+Percent Low Income 1
+Percentile PM 2.5: 99.9594919434
+Percentile Ozone: 98.946839378
+
+Current State: California
+Current FIPS: 060190006004
+Percent Low Income 0.953878406709
+Percentile PM 2.5: 99.9742406198
+Percentile Ozone: 98.711585809
+
+Current State: California
+Current FIPS: 060190054033
+Percent Low Income 0.93835125448
+Percentile PM 2.5: 99.7734530611
+Percentile Ozone: 98.8540449707
+
+Current State: California
+Current FIPS: 060190078022
+Percent Low Income 1
+Percentile PM 2.5: 84.7166752487
+Percentile Ozone: 96.7967974009
+
+Current State: California
+Current FIPS: 060190013041
+Percent Low Income 0.921779141104
+Percentile PM 2.5: 99.9594919434
+Percentile Ozone: 98.946839378
+
+Current State: California
+Current FIPS: 060190003002
+Percent Low Income 0.931195335277
+Percentile PM 2.5: 99.9988315172
+Percentile Ozone: 98.6374327413
+
+Current State: California
+Current FIPS: 060190083011
+Percent Low Income 0.96
+Percentile PM 2.5: 79.5344225699
+Percentile Ozone: 94.597164595
+
+Current State: California
+Current FIPS: 060190025013
+Percent Low Income 0.987682832948
+Percentile PM 2.5: 99.9830342023
+Percentile Ozone: 98.8165730807
+
+Current State: California
+Current FIPS: 060190083024
+Percent Low Income 0.948717948718
+Percentile PM 2.5: 37.4351766393
+Percentile Ozone: 89.8404842453
+
+Current State: California
+Current FIPS: 060190065012
+Percent Low Income 0.931182795699
+Percentile PM 2.5: 94.2229052065
+Percentile Ozone: 99.2712057214
+
+Current State: California
+Current FIPS: 060190006003
+Percent Low Income 0.938014737755
+Percentile PM 2.5: 99.9742406198
+Percentile Ozone: 98.711585809
+
+Current State: California
+Current FIPS: 060190059112
+Percent Low Income 1
+Percentile PM 2.5: 99.4989869273
+Percentile Ozone: 99.1491862165
+
+Current State: California
+Current FIPS: 060190014071
+Percent Low Income 0.925364758698
+Percentile PM 2.5: 99.9419881485
+Percentile Ozone: 99.0297257802
+
+Current State: California
+Current FIPS: 060190025011
+Percent Low Income 0.921198668147
+Percentile PM 2.5: 99.9830342023
+Percentile Ozone: 98.8165730807
+
+Current State: California
+Current FIPS: 060190051004
+Percent Low Income 0.969230769231
+Percentile PM 2.5: 99.9324546572
+Percentile Ozone: 98.7304586958
+
+Current State: California
+Current FIPS: 060190024003
+Percent Low Income 0.923972071373
+Percentile PM 2.5: 99.9901831809
+Percentile Ozone: 98.7537720128
+
+Current State: California
+Current FIPS: 060190025022
+Percent Low Income 0.916002896452
+Percentile PM 2.5: 99.9762187037
+Percentile Ozone: 98.8327400243
+
+Current State: California
+Current FIPS: 060190078023
+Percent Low Income 0.979327259986
+Percentile PM 2.5: 84.7166752487
+Percentile Ozone: 96.7967974009
+
+Current State: California
+Current FIPS: 060190062023
+Percent Low Income 0.926189174412
+Percentile PM 2.5: 98.610886231
+Percentile Ozone: 99.2791568108
+
+Current State: California
+Current FIPS: 060190028001
+Percent Low Income 0.916072842439
+Percentile PM 2.5: 99.9553455879
+Percentile Ozone: 98.899319773
+
+Current State: California
+Current FIPS: 060290025003
+Percent Low Income 0.916501976285
+Percentile PM 2.5: 99.6057673057
+Percentile Ozone: 98.8082605041
+
+Current State: California
+Current FIPS: 060290063041
+Percent Low Income 0.966286307054
+Percentile PM 2.5: 84.0999410151
+Percentile Ozone: 99.4279149679
+
+Current State: California
+Current FIPS: 060290013003
+Percent Low Income 0.919774011299
+Percentile PM 2.5: 99.569052259
+Percentile Ozone: 98.743147221
+
+Current State: California
+Current FIPS: 060290013001
+Percent Low Income 0.90395713108
+Percentile PM 2.5: 99.569052259
+Percentile Ozone: 98.743147221
+
+Current State: California
+Current FIPS: 060290050042
+Percent Low Income 0.901869158879
+Percentile PM 2.5: 96.5344541138
+Percentile Ozone: 98.2714367541
+
+Current State: California
+Current FIPS: 060290049012
+Percent Low Income 0.917464996315
+Percentile PM 2.5: 96.9535454013
+Percentile Ozone: 98.2485591757
+
+Current State: California
+Current FIPS: 060290013006
+Percent Low Income 0.963480128894
+Percentile PM 2.5: 99.569052259
+Percentile Ozone: 98.743147221
+
+Current State: California
+Current FIPS: 060290023013
+Percent Low Income 0.901426718547
+Percentile PM 2.5: 99.0543196085
+Percentile Ozone: 98.9807325451
+
+Current State: California
+Current FIPS: 060290047023
+Percent Low Income 0.976627712855
+Percentile PM 2.5: 96.0894106529
+Percentile Ozone: 98.2428033881
+
+Current State: California
+Current FIPS: 060290006003
+Percent Low Income 0.976744186047
+Percentile PM 2.5: 99.6366640372
+Percentile Ozone: 98.6557611177
+
+Current State: California
+Current FIPS: 060290013005
+Percent Low Income 0.901069518717
+Percentile PM 2.5: 99.569052259
+Percentile Ozone: 98.743147221
+
+Current State: California
+Current FIPS: 060290012024
+Percent Low Income 0.914141414141
+Percentile PM 2.5: 99.5194640355
+Percentile Ozone: 98.8285340723
+
+Current State: California
+Current FIPS: 060290020003
+Percent Low Income 0.90197486535
+Percentile PM 2.5: 99.7233587556
+Percentile Ozone: 98.676317688
+
+Current State: California
+Current FIPS: 060290022005
+Percent Low Income 0.910863509749
+Percentile PM 2.5: 99.6122630021
+Percentile Ozone: 98.7859684698
+
+Current State: California
+Current FIPS: 060290021001
+Percent Low Income 0.946902654867
+Percentile PM 2.5: 99.6546957336
+Percentile Ozone: 98.7496432431
+
+Current State: California
+Current FIPS: 060070030012
+Percent Low Income 0.943195266272
+Percentile PM 2.5: 11.2490621769
+Percentile Ozone: 87.015330788
+
+Current State: California
+Current FIPS: 060070006034
+Percent Low Income 0.938775510204
+Percentile PM 2.5: 15.4777120332
+Percentile Ozone: 76.5006538912
+
+Current State: California
+Current FIPS: 060070006041
+Percent Low Income 0.908934707904
+Percentile PM 2.5: 15.4256468085
+Percentile Ozone: 76.1583590869
+
+Current State: California
+Current FIPS: 060070011001
+Percent Low Income 0.946721311475
+Percentile PM 2.5: 15.458214197
+Percentile Ozone: 77.2114575071
+
+Current State: California
+Current FIPS: 060070006045
+Percent Low Income 0.922252010724
+Percentile PM 2.5: 15.4256468085
+Percentile Ozone: 76.1583590869
+
+Current State: California
+Current FIPS: 060070010004
+Percent Low Income 0.961070559611
+Percentile PM 2.5: 15.5352731655
+Percentile Ozone: 77.7589910472
+
+Current State: California
+Current FIPS: 061110091004
+Percent Low Income 0.909566126503
+Percentile PM 2.5: 28.2146146839
+Percentile Ozone: 41.7952482492
+
+Current State: California
+Current FIPS: 060770003002
+Percent Low Income 0.95421686747
+Percentile PM 2.5: 53.2597632913
+Percentile Ozone: 63.6825218173
+
+Current State: California
+Current FIPS: 060770001002
+Percent Low Income 0.972357723577
+Percentile PM 2.5: 53.0701863941
+Percentile Ozone: 64.4362101865
+
+Current State: California
+Current FIPS: 060770001004
+Percent Low Income 0.918604651163
+Percentile PM 2.5: 53.0701863941
+Percentile Ozone: 64.4362101865
+
+Current State: California
+Current FIPS: 060770022023
+Percent Low Income 0.945547725817
+Percentile PM 2.5: 52.2467384918
+Percentile Ozone: 66.5581584231
+
+Current State: California
+Current FIPS: 060770019003
+Percent Low Income 0.942610062893
+Percentile PM 2.5: 52.6335310638
+Percentile Ozone: 65.6142740692
+
+Current State: California
+Current FIPS: 060770033123
+Percent Low Income 0.904589371981
+Percentile PM 2.5: 52.2309457362
+Percentile Ozone: 64.4558122353
+
+Current State: California
+Current FIPS: 060770001001
+Percent Low Income 0.934742075823
+Percentile PM 2.5: 53.0701863941
+Percentile Ozone: 64.4362101865
+
+Current State: California
+Current FIPS: 060770004022
+Percent Low Income 0.908389585342
+Percentile PM 2.5: 52.7625458339
+Percentile Ozone: 63.9725358073
+
+Current State: California
+Current FIPS: 060770045022
+Percent Low Income 0.925541125541
+Percentile PM 2.5: 47.0426982324
+Percentile Ozone: 73.428783488
+
+Current State: California
+Current FIPS: 060650304003
+Percent Low Income 0.911094224924
+Percentile PM 2.5: 98.8550284764
+Percentile Ozone: 99.7032564868
+
+Current State: California
+Current FIPS: 060650456053
+Percent Low Income 0.922624877571
+Percentile PM 2.5: 9.79711640188
+Percentile Ozone: 96.2886008291
+
+Current State: California
+Current FIPS: 060650467003
+Percent Low Income 0.902232486528
+Percentile PM 2.5: 89.9496663965
+Percentile Ozone: 99.6928577059
+
+Current State: California
+Current FIPS: 060650456052
+Percent Low Income 0.907577019151
+Percentile PM 2.5: 9.79711640188
+Percentile Ozone: 96.2886008291
+
+Current State: California
+Current FIPS: 060375331061
+Percent Low Income 0.903826266805
+Percentile PM 2.5: 99.2025143667
+Percentile Ozone: 31.0520433987
+
+Current State: California
+Current FIPS: 060375414001
+Percent Low Income 0.950313807531
+Percentile PM 2.5: 97.9224189398
+Percentile Ozone: 25.9960865204
+
+Current State: California
+Current FIPS: 060375425023
+Percent Low Income 0.929313929314
+Percentile PM 2.5: 96.0927718322
+Percentile Ozone: 25.5194047907
+
+Current State: California
+Current FIPS: 060372431002
+Percent Low Income 0.927586206897
+Percentile PM 2.5: 98.4716228112
+Percentile Ozone: 26.6678404036
+
+Current State: California
+Current FIPS: 060372427002
+Percent Low Income 1
+Percentile PM 2.5: 98.5209045847
+Percentile Ozone: 26.7506007738
+
+Current State: California
+Current FIPS: 060375733002
+Percent Low Income 0.903002309469
+Percentile PM 2.5: 83.0576579002
+Percentile Ozone: 21.6164747379
+
+Current State: California
+Current FIPS: 060375331031
+Percent Low Income 0.905573770492
+Percentile PM 2.5: 99.2224476158
+Percentile Ozone: 30.5294023208
+
+Current State: California
+Current FIPS: 060372287202
+Percent Low Income 0.924864864865
+Percentile PM 2.5: 99.3490840609
+Percentile Ozone: 34.9074453792
+
+Current State: California
+Current FIPS: 060372407001
+Percent Low Income 0.970223325062
+Percentile PM 2.5: 98.478795889
+Percentile Ozone: 27.8409711262
+
+Current State: California
+Current FIPS: 060372311002
+Percent Low Income 0.939975990396
+Percentile PM 2.5: 98.9721516213
+Percentile Ozone: 38.8164962891
+
+Current State: California
+Current FIPS: 060372293003
+Percent Low Income 0.931072210066
+Percentile PM 2.5: 98.9823778002
+Percentile Ozone: 35.6584030548
+
+Current State: California
+Current FIPS: 060372293002
+Percent Low Income 0.971456692913
+Percentile PM 2.5: 98.9823778002
+Percentile Ozone: 35.6584030548
+
+Current State: California
+Current FIPS: 060375329001
+Percent Low Income 0.982456140351
+Percentile PM 2.5: 99.0300615399
+Percentile Ozone: 31.5560548609
+
+Current State: California
+Current FIPS: 060372962201
+Percent Low Income 0.904988123515
+Percentile PM 2.5: 55.8460020636
+Percentile Ozone: 22.4470651056
+
+Current State: California
+Current FIPS: 060710028043
+Percent Low Income 0.90807675145
+Percentile PM 2.5: 98.528310838
+Percentile Ozone: 99.5183561262
+
+Current State: California
+Current FIPS: 060710076012
+Percent Low Income 0.925190839695
+Percentile PM 2.5: 86.450468009
+Percentile Ozone: 99.9099069766
+
+Current State: California
+Current FIPS: 060710058002
+Percent Low Income 0.927302100162
+Percentile PM 2.5: 92.6795832914
+Percentile Ozone: 99.8176118124
+
+Current State: California
+Current FIPS: 060710057011
+Percent Low Income 0.954746136865
+Percentile PM 2.5: 94.4272698598
+Percentile Ozone: 99.803155908
+
+Current State: California
+Current FIPS: 060710055003
+Percent Low Income 0.926448736999
+Percentile PM 2.5: 91.7979678703
+Percentile Ozone: 99.8422053151
+
+Current State: California
+Current FIPS: 060710072002
+Percent Low Income 0.900886802295
+Percentile PM 2.5: 94.1423762868
+Percentile Ozone: 99.8748951533
+
+Current State: California
+Current FIPS: 060710042022
+Percent Low Income 0.90335753176
+Percentile PM 2.5: 93.5322657356
+Percentile Ozone: 99.7811478528
+
+Current State: California
+Current FIPS: 060710064011
+Percent Low Income 0.986842105263
+Percentile PM 2.5: 91.3184023849
+Percentile Ozone: 99.8491266545
+
+Current State: California
+Current FIPS: 060710055005
+Percent Low Income 0.985468956407
+Percentile PM 2.5: 91.7979678703
+Percentile Ozone: 99.8422053151
+
+Current State: California
+Current FIPS: 060710123001
+Percent Low Income 0.97806122449
+Percentile PM 2.5: 81.855067276
+Percentile Ozone: 99.9357757799
+
+Current State: California
+Current FIPS: 060710100203
+Percent Low Income 0.900819672131
+Percentile PM 2.5: 39.8387347777
+Percentile Ozone: 99.6436492068
+
+Current State: California
+Current FIPS: 060710091161
+Percent Low Income 0.94049008168
+Percentile PM 2.5: 25.2141051042
+Percentile Ozone: 98.3424566073
+
+Current State: California
+Current FIPS: 060710091162
+Percent Low Income 0.923487544484
+Percentile PM 2.5: 25.2141051042
+Percentile Ozone: 98.3424566073
+
+Current State: California
+Current FIPS: 060710031013
+Percent Low Income 0.929036073329
+Percentile PM 2.5: 99.2280213571
+Percentile Ozone: 99.5039386502
+
+Current State: California
+Current FIPS: 060372288002
+Percent Low Income 0.91442155309
+Percentile PM 2.5: 99.3308732492
+Percentile Ozone: 34.801757604
+
+Current State: California
+Current FIPS: 060372288001
+Percent Low Income 1
+Percentile PM 2.5: 99.3308732492
+Percentile Ozone: 34.801757604
+
+Current State: California
+Current FIPS: 060372289002
+Percent Low Income 0.920469361147
+Percentile PM 2.5: 99.325206368
+Percentile Ozone: 33.8009259946
+
+Current State: California
+Current FIPS: 060372944212
+Percent Low Income 0.96339869281
+Percentile PM 2.5: 73.0361537124
+Percentile Ozone: 22.6897060394
+
+Current State: California
+Current FIPS: 060379800071
+Percent Low Income 1
+Percentile PM 2.5: 77.6202679042
+Percentile Ozone: 26.877094578
+
+Current State: California
+Current FIPS: 060372284102
+Percent Low Income 1
+Percentile PM 2.5: 99.2835392728
+Percentile Ozone: 37.7763723272
+
+Current State: California
+Current FIPS: 060372284101
+Percent Low Income 0.902864259029
+Percentile PM 2.5: 99.2835392728
+Percentile Ozone: 37.7763723272
+
+Current State: California
+Current FIPS: 060372283104
+Percent Low Income 0.933985330073
+Percentile PM 2.5: 99.3208857822
+Percentile Ozone: 37.1251880409
+
+Current State: California
+Current FIPS: 060375313021
+Percent Low Income 0.916226415094
+Percentile PM 2.5: 99.4571188974
+Percentile Ozone: 36.0587204575
+
+Current State: California
+Current FIPS: 060372098101
+Percent Low Income 0.908450704225
+Percentile PM 2.5: 99.2752999707
+Percentile Ozone: 44.2030292742
+
+Current State: California
+Current FIPS: 060372264201
+Percent Low Income 0.906390134529
+Percentile PM 2.5: 99.3196632391
+Percentile Ozone: 38.9702686965
+
+Current State: California
+Current FIPS: 060372264202
+Percent Low Income 0.926343154246
+Percentile PM 2.5: 99.3196632391
+Percentile Ozone: 38.9702686965
+
+Current State: California
+Current FIPS: 060372031003
+Percent Low Income 0.908775981524
+Percentile PM 2.5: 99.0804053041
+Percentile Ozone: 45.8421114196
+
+Current State: California
+Current FIPS: 060375717034
+Percent Low Income 0.97224975223
+Percentile PM 2.5: 91.3468178815
+Percentile Ozone: 23.2226003262
+
+Current State: California
+Current FIPS: 060374026004
+Percent Low Income 0.910052910053
+Percentile PM 2.5: 96.3316292003
+Percentile Ozone: 97.0146513875
+
+Current State: California
+Current FIPS: 060372247002
+Percent Low Income 0.90495049505
+Percentile PM 2.5: 99.2298727576
+Percentile Ozone: 40.4548355946
+
+Current State: California
+Current FIPS: 060379800141
+Percent Low Income 0.903846153846
+Percentile PM 2.5: 75.5360498093
+Percentile Ozone: 20.8717821886
+
+Current State: California
+Current FIPS: 060375304001
+Percent Low Income 0.97305171158
+Percentile PM 2.5: 98.7786003192
+Percentile Ozone: 42.9524126373
+
+Current State: California
+Current FIPS: 060372091021
+Percent Low Income 0.913994169096
+Percentile PM 2.5: 99.3468197183
+Percentile Ozone: 44.7889302807
+
+Current State: California
+Current FIPS: 060373107012
+Percent Low Income 0.9476861167
+Percentile PM 2.5: 93.1169104667
+Percentile Ozone: 87.3287600278
+
+Current State: California
+Current FIPS: 060372246002
+Percent Low Income 0.902877697842
+Percentile PM 2.5: 99.2744223059
+Percentile Ozone: 39.6065629682
+
+Current State: California
+Current FIPS: 060372412013
+Percent Low Income 0.902083333333
+Percentile PM 2.5: 97.7910587367
+Percentile Ozone: 27.3846938817
+
+Current State: California
+Current FIPS: 060375330012
+Percent Low Income 0.917452830189
+Percentile PM 2.5: 98.8848511677
+Percentile Ozone: 31.8808836474
+
+Current State: California
+Current FIPS: 060372267001
+Percent Low Income 0.903488372093
+Percentile PM 2.5: 99.3020037768
+Percentile Ozone: 38.3872576334
+
+Current State: California
+Current FIPS: 060372240101
+Percent Low Income 0.913300492611
+Percentile PM 2.5: 99.3068030888
+Percentile Ozone: 41.5867141182
+
+Current State: California
+Current FIPS: 060372085022
+Percent Low Income 0.913846153846
+Percentile PM 2.5: 99.1228953525
+Percentile Ozone: 48.2311179083
+
+Current State: California
+Current FIPS: 060372318003
+Percent Low Income 0.919104991394
+Percentile PM 2.5: 98.9617541431
+Percentile Ozone: 37.2990089826
+
+Current State: California
+Current FIPS: 060372218102
+Percent Low Income 0.911764705882
+Percentile PM 2.5: 99.1874087623
+Percentile Ozone: 41.5781266811
+
+Current State: California
+Current FIPS: 060372218201
+Percent Low Income 0.915898617512
+Percentile PM 2.5: 99.2105869287
+Percentile Ozone: 41.3542746128
+
+Current State: California
+Current FIPS: 060372219001
+Percent Low Income 0.910142954391
+Percentile PM 2.5: 98.9168105413
+Percentile Ozone: 41.1794717938
+
+Current State: California
+Current FIPS: 060372653041
+Percent Low Income 0.909583107742
+Percentile PM 2.5: 91.2460385159
+Percentile Ozone: 62.4168116257
+
+Current State: California
+Current FIPS: 060372063002
+Percent Low Income 0.993580926181
+Percentile PM 2.5: 99.3708543813
+Percentile Ozone: 41.8045303278
+
+Current State: California
+Current FIPS: 060377011001
+Percent Low Income 0.901234567901
+Percentile PM 2.5: 90.3232767364
+Percentile Ozone: 59.7730048821
+
+Current State: California
+Current FIPS: 060372074001
+Percent Low Income 0.941176470588
+Percentile PM 2.5: 99.0398083412
+Percentile Ozone: 45.6137596502
+
+Current State: California
+Current FIPS: 060372063001
+Percent Low Income 0.966480446927
+Percentile PM 2.5: 99.3708543813
+Percentile Ozone: 41.8045303278
+
+Current State: California
+Current FIPS: 060372060102
+Percent Low Income 0.936186186186
+Percentile PM 2.5: 99.2335749073
+Percentile Ozone: 47.2767976478
+
+Current State: California
+Current FIPS: 060372094032
+Percent Low Income 0.936259143156
+Percentile PM 2.5: 99.3221659678
+Percentile Ozone: 44.5434723523
+
+Current State: California
+Current FIPS: 060379105013
+Percent Low Income 0.941704035874
+Percentile PM 2.5: 29.8761210832
+Percentile Ozone: 99.4224806108
+
+Current State: California
+Current FIPS: 060379105011
+Percent Low Income 0.911337209302
+Percentile PM 2.5: 29.8761210832
+Percentile Ozone: 99.4224806108
+
+Current State: California
+Current FIPS: 060372063003
+Percent Low Income 0.908926961226
+Percentile PM 2.5: 99.3708543813
+Percentile Ozone: 41.8045303278
+
+Current State: California
+Current FIPS: 060372062001
+Percent Low Income 0.964520367937
+Percentile PM 2.5: 99.3677882537
+Percentile Ozone: 42.6289288436
+
+Current State: California
+Current FIPS: 060374023042
+Percent Low Income 0.909311348206
+Percentile PM 2.5: 95.9441742275
+Percentile Ozone: 96.0502153483
+
