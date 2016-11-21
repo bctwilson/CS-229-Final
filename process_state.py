@@ -27,6 +27,17 @@ import pickle
 # Previous tract:01047956400
 # Fileread Complete! 
 
+# Combine Tract Data for...:
+# area, pop, lowinc, mins, under5, over64, age25up, laths, holds, lingoes,
+# built units, pre1960, povknownratio, traffic.score
+
+# For traffic.score: 
+# In the case of census tract 6001400300, 
+# the traffic.score = (1082*899+1203*181+1163*1238+1798*286) / (1082+1203+1163+1798).  What do you think?
+# (sumWeightedTrafficScore/total_population)
+
+# Small Detail: Some Census Tracts are missing!!! 
+
 # Number of census tracts in California: 9
 
 fieldsWanted = [
@@ -39,62 +50,68 @@ fieldsWanted = [
 	"pop", 
 
 	"lowinc", 
-	"pctlowinc", 
-	"pctile.pctlowinc", 
 	"povknownratio", 
 
 	"mins", 
-	"pctmin", 
-	"pctile.pctmin", 
-
 
 	"under5", 
-	"pctunder5", 
-	"pctile.pctunder5", 
 
 	"over64", 
-	"pctover64", 
-	"pctile.pctover64", 
 
 	"age25up", 
 	"lths", 
-	"pctlths", 
-	"pctile.pctlths", 
 
 	"hhlds", 
 	"lingiso", 
-	"pctlingiso", 
-	"pctile.pctlingiso", 
 
 	"builtunits", 
 	"pre1960", 
-	"pctpre1960", 
-	"pctile.pctpre1960", 
-
-	"traffic.score", 
-	"pctile.traffic.score", 
+	"traffic.score"
 	]
 
 
 
-global prev_tract, numCensusTracts
+
+global tracts_seen
 
 numCensusTracts = 0
 prev_tract = ""
+rawEntriesToWrite_Dict = {} # These entries will have data lines from each census TRACT
+rawEntriesToWrite = [] # These entries will have data lines from each census TRACT
 
-def getCurrTract(FIPS_str):
-	global prev_tract, numCensusTracts
-	tractStr = FIPS_str[0:11]; # Only take first 11 digits, exclude the block number
-	print tractStr	
-	print "Previous tract:" + prev_tract
-	if (tractStr != prev_tract):
-		numCensusTracts +=1
-		prev_tract = tractStr
-	return tractStr
+def createNewEntry(row, tract):
+	rawEntriesToWrite_Dict[tract] = ["dummy"]
 
-def getCensusTractFromList(entry):
-	FIPS = entry[1]
-	tract = FIPS[0:11]
+def updateTract(row):
+	d = 13
+
+def getCensusTractFromList(row):
+	FIPS = row[1]
+	tract = FIPS[0:11] # Only take first 11 digits, exclude the block number
+	return tract
+
+def updateDictionary(row):
+	tract = getCensusTractFromList(row)
+	if tract in rawEntriesToWrite_Dict.keys():
+		df = 131 # updateTract(row) 
+	else:
+		createNewEntry(row, tract)
+
+
+
+# Get index of each field, from the first row
+def getFieldIndex(row, fieldIndex):
+	shortHeader = [];
+	for field in fieldsWanted:
+		ind = row.index(field)
+		fieldIndex.append(ind)
+		shortHeader.append(row[ind])
+	rawEntriesToWrite.append(shortHeader)
+
+def addEntry(row):
+	updateDictionary(row) 
+
+
 
 # currTract = getCurrTract(row[1]); # Get current census tract (11-digits)
 
@@ -120,18 +137,26 @@ def getCensusTractFromList(entry):
 #     f.close()
 # print "Write complete!"
 
-numLinesToOpen = 10
+numLinesToOpen = -1
 iterNum = 0
 print "Reading File..."
 
 with open('EJScreen_SocioDemographic_California_FIPS_Sorted.csv', 'rU') as f: 
     reader = csv.reader(f)
     fieldIndex = []
+    curr_Tract_toWrite = [];
     numCensusTracts = 0;
     for row in reader:
     	if (iterNum == numLinesToOpen):
     		break
-    	print row
-    	print "\n"
+    	if (iterNum != 0):
+        	updateDictionary(row)     
+    	else:
+    		getFieldIndex(row, fieldIndex)
         iterNum +=1
 print "Fileread Complete! \n"
+
+print "Number of Census Tracts: %d " %(len(rawEntriesToWrite_Dict))
+
+
+
