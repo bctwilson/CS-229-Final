@@ -3,6 +3,7 @@ import numpy
 
 import matplotlib; matplotlib.use('Agg') # Use a backend that doesn't require a display.
 import matplotlib.pyplot as plt # Use the pyplot interface of matplotlib.
+import pickle 
 
 def create_graph(title, output, graphs):
     """Helper function for creating a graph."""
@@ -24,21 +25,24 @@ def create_graph(title, output, graphs):
 
 
 """
-Want to consider building a matrix of features and examples... 
 
-Basic Examples: 
+Census Track Format: 
+https://www.cubitplanning.com/data/census-tract-numbers
 
-FIPS - Census FIPS code for block group
-statename - Name of State
-REGION = EPA Region Number
-pm - PM2.5 level in air 
-o3 - Ozone level in air 
-pctmin - % Minority
-pctlowinc = % Low Income
-pctlths = % Lower than High School Education for Population 25 years and over
-pctile.pm = %ile 2.5pm
-pctile.o3 = %ile Ozone
+https://en.wikipedia.org/wiki/Census_block
+https://en.wikipedia.org/wiki/Census_block_group
 
+https://transition.fcc.gov/form477/Geo/more_about_census_tracts.pdf
+
+06067001101 1
+
+FORMAT:
+
+06|067|001101
+
+Example, OBJECT ID 19996: 
+
+06|067|001101|1 [California, Sacremento County, Tract 11.01, Block Group (single digit)], overall 12-digit number, 11 digit census tract
 
 """
 Entries = []
@@ -89,11 +93,11 @@ fieldsWanted = [
 
 	"traffic.score", 
 	"pctile.traffic.score", 
-	
 ]
 
-fieldIndex = []
+
 rawEntriesToWrite = []; # A list of the raw CSV rows, with the desired data to write
+
 
 # Will eventually use a more efficient data-structure, like a matrix inside 
 class Entry:
@@ -117,19 +121,21 @@ class Entry:
 # PCTL, EC in Excel
 # Email: enviromail_group@epa.gov to ask about whether percentile is national or not 
 
+
+
 # Processes the current line passed in
-def addEntry(row, iterNum = -1, file = ""):
+def addEntry(row, fieldIndex, iterNum = -1, file = "",):
 	newEntry = Entry(row)
 	if (newEntry.state == "California"):
 		newRawEntry = [];
-		for index in fieldIndex:
+		for index in fieldIndex: # Write desired data into a python list. 
 			newRawEntry.append(row[index]) 
 		rawEntriesToWrite.append(newRawEntry)
-	Entries.append(newEntry)
+		Entries.append(newRawEntry)
 
 
 # Get index of each field, from the first row
-def getFieldIndex(row):
+def getFieldIndex(row, fieldIndex):
 	shortHeader = [];
 	for field in fieldsWanted:
 		ind = row.index(field)
@@ -137,7 +143,9 @@ def getFieldIndex(row):
 		shortHeader.append(row[ind])
 	rawEntriesToWrite.append(shortHeader)
 
-# BEGIN PROGRAM
+
+
+# BEGIN PROGRAM ->>>>>>>->>>>>>>->>>>>>>->>>>>>>->>>>>>>->>>>>>>->>>>>>>->>>>>>>
 
 # plt.plot([1,2,3,4])
 # plt.ylabel('some numbers')
@@ -153,19 +161,31 @@ iterNum = 0
 print "Reading File..."
 with open('EJSCREEN_20150505.csv', 'rU') as f: 
     reader = csv.reader(f)
+    fieldIndex = []
+    numCensusTracts = 0;
     for row in reader:
     	if (iterNum == numLinesToOpen):
     		break
     	if (iterNum != 0):
-        	addEntry(row)     
+        	addEntry(row, fieldIndex)     
     	else:
-    		getFieldIndex(row)
+    		getFieldIndex(row, fieldIndex)
         iterNum +=1
 print "Fileread Complete! \n"
 
-outFileName = "EJScreen_SocioDemographic_California.csv"
-print "Writing to CSV File...."
-with open(outFileName, "wb") as f:
-    writer = csv.writer(f)
-    writer.writerows(rawEntriesToWrite)
-print "Write complete!"
+# print "Writing to CSV File...."
+# outFileName = "EJScreen_SocioDemographic_California2.csv"
+# with open(outFileName, "wb") as f:
+#     writer = csv.writer(f)
+#     writer.writerows(rawEntriesToWrite)
+# print "Write complete!"
+
+# Pickle the songs
+
+pickle_filename = "California_SocioDemoGraphic_Lists.pkl"
+output = open(pickle_filename, 'wb')
+
+# Pickle California Data using protocol 0.
+pickle.dump(rawEntriesToWrite, output)
+
+output.close()
