@@ -1,0 +1,56 @@
+Blane-Wilsons-MacBook-Pro:Final Project lbwilsonbosque$ python process_state.py 
+Reading File...
+['OBJECTID', 'FIPS', 'ST', 'statename', 'REGION', 'area', 'pop', 'lowinc', 'povknownratio', 'mins', 'under5', 'over64', 'age25up', 'lths', 'hhlds', 'lingiso', 'builtunits', 'pre1960', 'traffic.score']
+Fileread Complete! 
+
+Number of Census Tracts: 8057 
+Writing to CSV File....
+Write complete! 
+
+No Traffic Data for the following tracts:
+06001990000
+06015990000
+06023990100
+06037990100
+06037990200
+06037990300
+06041990100
+06045990100
+06053990000
+06075980401
+06075990100
+06079990000
+06087990100
+06097990100
+
+
+No Population Data for the following tracts:
+06037504102
+06059990100
+06081990100
+06053980000
+06017990000
+06083980100
+06013990000
+06083990000
+06037980001
+06037980002
+06037980003
+06037980005
+06037980006
+06037980028
+06037980022
+06037980021
+06037980025
+06111990100
+06037320000
+06037980013
+06081984300
+06037980030
+06061990000
+06071980100
+06065980004
+06073990100
+06037980023
+06037980020
+Blane-Wilsons-MacBook-Pro:Final Project lbwilsonbosque$ 

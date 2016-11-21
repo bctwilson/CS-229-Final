@@ -85,19 +85,40 @@ numCensusTracts = 0
 prev_tract = ""
 rawEntriesToWrite_Dict = {} # These entries will have data lines from each census TRACT
 rawEntriesToWrite = [] # These entries will have data lines from each census TRACT
+noTrafficTracts = []
+noPopulationTracts = []
+
+def getCensusTractFromList(row):
+	FIPS = row[1]
+	tract = FIPS[0:11] # Only take first 11 digits, exclude the block number
+	return tract
 
 def calculate_unknown_pov(row, longHeader):
 	return int(row[longHeader.index("pop")]) - int(row[longHeader.index("povknownratio")])
 
+def calculate_weighted_traffic_score(row, longHeader):
+	if (row[longHeader.index("traffic.score")] != "NA"):
+		return float(row[longHeader.index("pop")])*float(row[longHeader.index("traffic.score")])
+	else:
+		if (getCensusTractFromList(row) not in noTrafficTracts):
+			noTrafficTracts.append(getCensusTractFromList(row))
+		return 0
 
 def createNewEntry(row, tract, longHeader):
 	newRawEntry = []
 	for index in fieldIndex: # Write desired data into a python list. 
-		newRawEntry.append(row[index]) 
+		val = row[index]
+		if (longHeader[index] in fieldsToUpdate): # Make them doubles
+			if (longHeader[index] == "traffic.score"):
+				newRawEntry.append(calculate_weighted_traffic_score(row, longHeader));
+			else:
+				newRawEntry.append(float(val))
+		else:
+			newRawEntry.append(val) 
 	newRawEntry[1] = tract # Exclude last digit!!!
 	newRawEntry[fieldsWanted.index("povknownratio")] =  calculate_unknown_pov(row, longHeader) # Actually want to keep track of number of unknown pov status
-	print "New entry!: "
-	print newRawEntry
+	# print "New entry!: "
+	# print newRawEntry
 	rawEntriesToWrite_Dict[tract] = newRawEntry
 
 def updateTract(row, tract, longHeader):
@@ -106,18 +127,17 @@ def updateTract(row, tract, longHeader):
 	newEntry = rawEntriesToWrite_Dict[tract] # Copy old entry to this, to be updated, and then replace in dictionary
 	for field in fieldsToUpdate:
 		if (field == "povknownratio"): # You're actually updating # of unknown poverty status in your tract
-		  curr_unknownPov = int(newEntry[fieldsWanted.index("povknownratio")])
-		  newEntry[fieldsWanted.index("povknownratio")] = str(curr_unknownPov+calculate_unknown_pov(row, longHeader))
+		  curr_unknownPov = int(newEntry[fieldsWanted.index(field)])
+		  newEntry[fieldsWanted.index(field)] = curr_unknownPov+calculate_unknown_pov(row, longHeader)
+		elif (field == "traffic.score"):
+			newEntry[fieldsWanted.index(field)] += calculate_weighted_traffic_score(row, longHeader)
+		else:
+			newEntry[fieldsWanted.index(field)] += float(row[longHeader.index(field)])
   	
   	rawEntriesToWrite_Dict[tract] = newEntry
-  	print "Updated Tract: "
-  	print newEntry
+  	# print "Updated Tract: "
+  	# print newEntry
 
-
-def getCensusTractFromList(row):
-	FIPS = row[1]
-	tract = FIPS[0:11] # Only take first 11 digits, exclude the block number
-	return tract
 
 def updateDictionary(row, longHeader):
 	tract = getCensusTractFromList(row)
@@ -137,13 +157,21 @@ def getFieldIndex(row, fieldIndex):
 		ind = row.index(field)
 		fieldIndex.append(ind)
 		shortHeader.append(row[ind])
-	shortHeader[8] = "povUnknown"
 	rawEntriesToWrite.append(shortHeader)
 	print shortHeader
 	return longHeader
 
 def addEntry(row):
 	updateDictionary(row) 
+
+def isPopulated(newEntry, tract):
+	if (newEntry[fieldsWanted.index("pop")] != 0):
+		return True
+	else:
+		if (tract not in noPopulationTracts):
+			noPopulationTracts.append(tract)
+		return False 
+
 
 
 
@@ -171,7 +199,7 @@ def addEntry(row):
 #     f.close()
 # print "Write complete!"
 
-numLinesToOpen = 5
+numLinesToOpen = -1
 iterNum = 0
 print "Reading File..."
 
@@ -192,7 +220,36 @@ print "Fileread Complete! \n"
 
 print "Number of Census Tracts: %d " %(len(rawEntriesToWrite_Dict))
 
-print "Now it's time to display dictionary... "
 
+for key in rawEntriesToWrite_Dict:
+	newEntry = rawEntriesToWrite_Dict[key]
+	newEntry[fieldsWanted.index("povknownratio")] = (newEntry[fieldsWanted.index("pop")] - newEntry[fieldsWanted.index("povknownratio")] )
+	if (key not in noTrafficTracts and isPopulated(newEntry,key)):
+		newEntry[fieldsWanted.index("traffic.score")] = newEntry[fieldsWanted.index("traffic.score")]/newEntry[fieldsWanted.index("pop")]
+	else: 
+		newEntry[fieldsWanted.index("traffic.score")] = "NA"
+	rawEntriesToWrite.append(newEntry)
+
+# Sort the entries
+rawEntriesToWrite_Sorted = sorted(rawEntriesToWrite[1:len(rawEntriesToWrite)], key=lambda entry: int(entry[1]))
+rawEntriesToWrite_Sorted.insert(0,rawEntriesToWrite[0])
+
+print "Writing to CSV File...."
+outFileName = "EJScreen_SocioDemographic_California_FIPS_TRACTS_Sorted.csv"
+with open(outFileName, "wb") as f:
+    writer = csv.writer(f)
+    writer.writerows(rawEntriesToWrite_Sorted)
+    f.close()
+print "Write complete! \n"
+
+
+print "No Traffic Data for the following tracts:"
+for tract in noTrafficTracts: print tract
+print "\n"
+print "No Population Data for the following tracts:"
+for tract in noPopulationTracts: print tract
+
+# FINALLY, KEEP RUNNING SUM OF WEIGHTED TRAFFIC SUM. AND THEN DIVIDE BY POPULATION FOR EACH CENSUS TRACT TO GET TRAFFIC. 
+# ALSO, KEEP RUNNING SUM OF NUMBER OF UNKNOWN POVERTY STATUS CALCULATION, SO YOU CAN DO FINAL CALCULATION IN THE END 
 
 
