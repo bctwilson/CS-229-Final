@@ -47,10 +47,15 @@ Example, OBJECT ID 19996:
 CALENVIROSCREEN: 06|019|000902
 
 """
-Entries = []
-legend = []
-# fieldsWanted = ["FIPS", "statename", "REGION", "pm", "o3", "pctmin","pctlowinc","pctlths", "pctile.pm", 
-# 	"pctile.o3"] 
+
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
+	'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 
+	'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 
+	'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+	'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 
+	'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+
+
 fieldsWanted = [
 	"OBJECTID", 
 	"FIPS", 
@@ -98,9 +103,6 @@ fieldsWanted = [
 ]
 
 
-rawEntriesToWrite = []; # A list of the raw CSV rows, with the desired data to write
-
-
 # Will eventually use a more efficient data-structure, like a matrix inside 
 class Entry:
 	"A class that contains desired data"
@@ -118,17 +120,12 @@ class Entry:
 		# self.pctilePM = rawData[fieldIndex[fieldsWanted.index("pctilePM")]]
 		# self.pctileO3 = rawData[fieldIndex[fieldsWanted.index("pctileO3")]]
 
-# def 
-# 36.02788332
-# PCTL, EC in Excel
-# Email: enviromail_group@epa.gov to ask about whether percentile is national or not 
-
 
 
 # Processes the current line passed in
-def addEntry(row, fieldIndex, iterNum = -1, file = "",):
+def addEntry(row, fieldIndex, curr_state, iterNum = -1, file = "",):
 	newEntry = Entry(row)
-	if (newEntry.state == "California"):
+	if (newEntry.state == curr_state):
 		newRawEntry = [];
 		for index in fieldIndex: # Write desired data into a python list. 
 			newRawEntry.append(row[index]) 
@@ -153,41 +150,36 @@ def getFieldIndex(row, fieldIndex):
 # plt.ylabel('some numbers')
 # plt.show()
 
-# Put each line of the file into a python list. 
+for curr_state in states:
 
-#file = open("California_90_Percent_2.txt", "w") # File to
-dataLines = []
-print 'Loading EJCSREEN file...\n'
-numLinesToOpen = -1
-iterNum = 0
-print "Reading File..."
-with open('EJSCREEN_20150505.csv', 'rU') as f: 
-    reader = csv.reader(f)
-    fieldIndex = []
-    numCensusTracts = 0;
-    for row in reader:
-    	if (iterNum == numLinesToOpen):
-    		break
-    	if (iterNum != 0):
-        	addEntry(row, fieldIndex)     
-    	else:
-    		getFieldIndex(row, fieldIndex)
-        iterNum +=1
-print "Fileread Complete! \n"
+	rawEntriesToWrite = []; # A list of the raw CSV rows, with the desired data to write
+	Entries = []
+	legend = []
 
-# print "Writing to CSV File...."
-# outFileName = "EJScreen_SocioDemographic_California2.csv"
-# with open(outFileName, "wb") as f:
-#     writer = csv.writer(f)
-#     writer.writerows(rawEntriesToWrite)
-# print "Write complete!"
+	dataLines = []
+	print 'Loading EJCSREEN file...\n'
+	numLinesToOpen = -1
+	iterNum = 0
+	print "Reading File..."
+	with open('EJSCREEN_20150505.csv', 'rU') as f: 
+	    reader = csv.reader(f)
+	    fieldIndex = []
+	    numCensusTracts = 0;
+	    for row in reader:
+	    	if (iterNum == numLinesToOpen):
+	    		break
+	    	if (iterNum != 0):
+	        	addEntry(row, fieldIndex, curr_state)     
+	    	else:
+	    		getFieldIndex(row, fieldIndex)
+	        iterNum +=1
+	print "Fileread Complete! \n"
 
-# Pickle the songs
+	print "Writing " + curr_state + " SocioDemographic data to CSV File...."
+	outFileName = "EJScreen_SocioDemographic_" + curr_state +".csv"
+	with open(outFileName, "wb") as f:
+	    writer = csv.writer(f)
+	    writer.writerows(rawEntriesToWrite)
+	print "Write complete!"
 
-pickle_filename = "California_SocioDemoGraphic_Lists.pkl"
-output = open(pickle_filename, 'wb')
 
-# Pickle California Data using protocol 0.
-pickle.dump(rawEntriesToWrite, output)
-
-output.close()

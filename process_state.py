@@ -4,6 +4,7 @@ import numpy
 import matplotlib; matplotlib.use('Agg') # Use a backend that doesn't require a display.
 import matplotlib.pyplot as plt # Use the pyplot interface of matplotlib.
 import pickle 
+import os
 
 
 # Reading File...
@@ -79,14 +80,17 @@ fieldsToUpdate = [
 	"traffic.score"
 ]
 
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
+	'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 
+	'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 
+	'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+	'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 
+	'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
 
-
-numCensusTracts = 0
-prev_tract = ""
-rawEntriesToWrite_Dict = {} # These entries will have data lines from each census TRACT
-rawEntriesToWrite = [] # These entries will have data lines from each census TRACT
-noTrafficTracts = []
-noPopulationTracts = []
+def getStateName(filename):
+	for statename in states:
+		if (statename in filename and statename not in statelist):
+			return statename
 
 def getCensusTractFromList(row):
 	FIPS = row[1]
@@ -173,7 +177,7 @@ def isPopulated(newEntry, tract):
 		return False 
 
 
-
+statelist = []
 
 # currTract = getCurrTract(row[1]); # Get current census tract (11-digits)
 
@@ -199,57 +203,68 @@ def isPopulated(newEntry, tract):
 #     f.close()
 # print "Write complete!"
 
-numLinesToOpen = -1
-iterNum = 0
-print "Reading File..."
+directory = "/Users/lbwilsonbosque/Dropbox/CS 229/Final Project/SocioDemographicStates_Cenus_Block"
+for filename in os.listdir(directory):
+	curr_state = getStateName(filename)
+	statelist.append(curr_state)
 
-with open('EJScreen_SocioDemographic_California_FIPS_Sorted.csv', 'rU') as f: 
-    reader = csv.reader(f)
-    fieldIndex = []
-    longHeader = [];
-    numCensusTracts = 0;
-    for row in reader:
-    	if (iterNum == numLinesToOpen):
-    		break
-    	if (iterNum != 0):
-        	updateDictionary(row, longHeader)     
-    	else:
-    		longHeader = getFieldIndex(row, fieldIndex)
-        iterNum +=1
-print "Fileread Complete! \n"
+	numCensusTracts = 0
+	prev_tract = ""
+	rawEntriesToWrite_Dict = {} # These entries will have data lines from each census TRACT
+	rawEntriesToWrite = [] # These entries will have data lines from each census TRACT
+	noTrafficTracts = []
+	noPopulationTracts = []
 
-print "Number of Census Tracts: %d " %(len(rawEntriesToWrite_Dict))
+	numLinesToOpen = -1
+	iterNum = 0
+	print "Reading File..."
 
+	with open(directory + "/" + filename, 'rU') as f: 
+	    reader = csv.reader(f)
+	    fieldIndex = []
+	    longHeader = [];
+	    numCensusTracts = 0;
+	    for row in reader:
+	    	if (iterNum == numLinesToOpen):
+	    		break
+	    	if (iterNum != 0):
+	        	updateDictionary(row, longHeader)     
+	    	else:
+	    		longHeader = getFieldIndex(row, fieldIndex)
+	        iterNum +=1
+	print "Fileread Complete! \n"
 
-for key in rawEntriesToWrite_Dict:
-	newEntry = rawEntriesToWrite_Dict[key]
-	newEntry[fieldsWanted.index("povknownratio")] = (newEntry[fieldsWanted.index("pop")] - newEntry[fieldsWanted.index("povknownratio")] )
-	if (key not in noTrafficTracts and isPopulated(newEntry,key)):
-		newEntry[fieldsWanted.index("traffic.score")] = newEntry[fieldsWanted.index("traffic.score")]/newEntry[fieldsWanted.index("pop")]
-	else: 
-		newEntry[fieldsWanted.index("traffic.score")] = "NA"
-	rawEntriesToWrite.append(newEntry)
-
-# Sort the entries
-rawEntriesToWrite_Sorted = sorted(rawEntriesToWrite[1:len(rawEntriesToWrite)], key=lambda entry: int(entry[1]))
-rawEntriesToWrite_Sorted.insert(0,rawEntriesToWrite[0])
-
-print "Writing to CSV File...."
-outFileName = "EJScreen_SocioDemographic_California_FIPS_TRACTS_Sorted.csv"
-with open(outFileName, "wb") as f:
-    writer = csv.writer(f)
-    writer.writerows(rawEntriesToWrite_Sorted)
-    f.close()
-print "Write complete! \n"
+	print "Number of Census Tracts: %d " %(len(rawEntriesToWrite_Dict))
 
 
-print "No Traffic Data for the following tracts:"
-for tract in noTrafficTracts: print tract
-print "\n"
-print "No Population Data for the following tracts:"
-for tract in noPopulationTracts: print tract
+	for key in rawEntriesToWrite_Dict:
+		newEntry = rawEntriesToWrite_Dict[key]
+		newEntry[fieldsWanted.index("povknownratio")] = (newEntry[fieldsWanted.index("pop")] - newEntry[fieldsWanted.index("povknownratio")] )
+		if (key not in noTrafficTracts and isPopulated(newEntry,key)):
+			newEntry[fieldsWanted.index("traffic.score")] = newEntry[fieldsWanted.index("traffic.score")]/newEntry[fieldsWanted.index("pop")]
+		else: 
+			newEntry[fieldsWanted.index("traffic.score")] = "NA"
+		rawEntriesToWrite.append(newEntry)
 
-# FINALLY, KEEP RUNNING SUM OF WEIGHTED TRAFFIC SUM. AND THEN DIVIDE BY POPULATION FOR EACH CENSUS TRACT TO GET TRAFFIC. 
-# ALSO, KEEP RUNNING SUM OF NUMBER OF UNKNOWN POVERTY STATUS CALCULATION, SO YOU CAN DO FINAL CALCULATION IN THE END 
+	# Sort the entries
+	rawEntriesToWrite_Sorted = sorted(rawEntriesToWrite[1:len(rawEntriesToWrite)], key=lambda entry: int(entry[1]))
+	rawEntriesToWrite_Sorted.insert(0,rawEntriesToWrite[0])
 
+	print "Writing " + curr_state + " Census Tract info to CSV File...."
+	outFileName = "EJScreen_SocioDemographic_FIPS_TRACTS_Sorted_" + curr_state + ".csv"
+	with open(outFileName, "wb") as f:
+	    writer = csv.writer(f)
+	    writer.writerows(rawEntriesToWrite_Sorted)
+	    f.close()
+	print "Write complete! \n"
+
+
+	print "No Traffic Data for the following tracts:"
+	for tract in noTrafficTracts: print tract
+	print "\n"
+	print "No Population Data for the following tracts:"
+	for tract in noPopulationTracts: print tract
+	print "\n"
+
+print statelist
 
