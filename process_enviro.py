@@ -4,16 +4,12 @@ import numpy
 import matplotlib; matplotlib.use('Agg') # Use a backend that doesn't require a display.
 import matplotlib.pyplot as plt # Use the pyplot interface of matplotlib.
 import pickle 
-
-
-myEnviroObjects = [] # Intitalize empty set of huffmanObjects
-enviroRows = []
-global enviroHeader
+import os
 
 
 fieldsWanted = [
 	"Census Tract", 
-	"CES 2.0 Score"
+	"Pollution Burden"
 	]
 
 def sanitizeRow(row, iterNum):
@@ -41,16 +37,19 @@ def addEntry(row, fieldIndex):
 	enviroRows.append(newEntry)
 
 
+myEnviroObjects = [] # May use for pickle file?
+enviroRows = []
+
 numLinesToOpen = -1
 iterNum = 0
 print "Reading File..."
-
-with open('CalEnviroScreen_formatted.csv', 'rU') as f: 
+with open("CalEnviroScreen_2014.csv", 'rU') as f: 
     reader = csv.reader(f)
     fieldIndex = []
     enviroHeader = [];
     numCensusTracts = 0;
     for row in reader:
+    	row = sanitizeRow(row, iterNum)
     	if (iterNum == numLinesToOpen):
     		break
     	if (iterNum != 0):
@@ -62,11 +61,11 @@ with open('CalEnviroScreen_formatted.csv', 'rU') as f:
 print "Fileread Complete! \n"
 
 # Sort the entries
-enviroRowsSorted = sorted(enviroRows[1:len(enviroRows)-1], key=lambda entry: int(entry[0]))
+enviroRowsSorted = sorted(enviroRows[1:len(enviroRows)], key=lambda entry: int(entry[0]))
 enviroRowsSorted.insert(0,enviroRows[0])
 
-print "Writing to CSV File...."
-outFileName = "CalEnviroScreen_tract_scores.csv"
+print "Writing Pollution Burden Score to CSV File..."
+outFileName = "CalEnviroScreen_tract_EnviroScore_California.csv"
 with open(outFileName, "wb") as f:
     writer = csv.writer(f)
     writer.writerows(enviroRowsSorted)
