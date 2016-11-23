@@ -14,23 +14,6 @@ from scipy import stats
 # lths/age25up, % of people over age 25 that have less than high school education
 
 
-fieldsWanted = [
-	"area", 
-	"pop", 
-	"lowinc", 
-	"povknownratio", 
-	"mins", 
-	"under5", 
-	"over64", 
-	"age25up", 
-	"lths", 
-	"hhlds", 
-	"lingiso", 
-	"builtunits", 
-	"pre1960", 
-	"traffic.score"
-	]
-
 states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
 	'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 
 	'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 
