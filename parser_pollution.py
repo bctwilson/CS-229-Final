@@ -63,17 +63,21 @@ fieldsWanted = [
 	"statename", 
 	"REGION", 
 	"area", 
-	"pop", 
+	# "pop", 
 
-	"builtunits", 
-	"pre1960", 
-	"o3", 
-	"pm", 
-	"proximity.npdes", 
-	"proximity.npl", 
-	"proximity.rmp", 
-	"proximity.tsdf", 
-	"traffic.score", 
+	# "builtunits", 
+	# "pre1960", 
+	# "o3", 
+	# "pm", 
+	# "proximity.npdes", 
+	# "proximity.npl", 
+	# "proximity.rmp", 
+	# "proximity.tsdf", 
+	# "traffic.score", 
+	"cancer",
+	"dpm", 
+	"neuro",
+	"resp"
 
 ]
 
@@ -155,7 +159,7 @@ for curr_state in states:
 	rawEntriesToWrite_Sorted.insert(0,rawEntriesToWrite[0])
 
 	print "Writing " + curr_state + " SocioDemographic data to CSV File...."
-	outFileName = "EJScreen_Pollution_" + curr_state +".csv"
+	outFileName = "EJScreen_Pollution_NA_VALUES" + curr_state +".csv"
 	with open(outFileName, "wb") as f:
 	    writer = csv.writer(f)
 	    writer.writerows(rawEntriesToWrite_Sorted)

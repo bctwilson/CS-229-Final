@@ -13,6 +13,21 @@ from scipy import stats
 # mins/pop, # minories
 # lths/age25up, % of people over age 25 that have less than high school education
 
+# Features to get, Nov. 29th..._____________________
+
+
+# pctpopdense (percentile of population/area) DONE
+# pctlowinc NEED
+# percunknownpov ----> =(1-M3/G3)*100 (1-#povknown/#population)*100  NEED
+# pctmin DONE
+# pctchildren DONE
+# pctaged NEED
+# pctlths DONE 
+# pctlingisohlds DONE
+
+# Everything is in percentiles except unknownpov.
+
+# Features to get, Nov. 29th..._____________________
 
 states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
 	'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 
@@ -49,6 +64,24 @@ def getTracthhlds(row, fileHeader):
 def getTractlingiso(row, fileHeader):
 	return float(row[fileHeader.index("lingiso")])
 
+def getTractlowinc(row,fileHeader):
+	return float(row[fileHeader.index("lowinc")])
+
+def getTractover64(row,fileHeader):
+	return float(row[fileHeader.index("over64")])
+
+def getTractpovknown(row,fileHeader):
+	return float(row[fileHeader.index("povknownratio")])
+
+def lowinc_pct(row,fileHeader):
+	return 100*(getTractlowinc(row,fileHeader))/getTractPop(row,fileHeader)
+
+def aged_pct(row,fileHeader):
+	return 100*(getTractover64(row,fileHeader))/getTractPop(row,fileHeader)
+
+def unknown_pct(row,fileHeader):
+	return 100*( 1-(getTractpovknown(row,fileHeader))/getTractPop(row,fileHeader) ) #(1-#povknown/#population)*100  NEED
+
 def lingiso_pct(row, fileHeader):
 	return 100*(getTractlingiso(row,fileHeader))/getTracthhlds(row,fileHeader)
 
@@ -72,17 +105,35 @@ def add_pct_row(row, fileHeader):
 		lths_pctVal = lths_pct(row, fileHeader)
 		children_pctVal = children_pct(row, fileHeader)
 		lingiso_pctVal = lingiso_pct(row, fileHeader)
+
+		lowinc_pctVal = lowinc_pct(row, fileHeader)
+		aged_pctVal = aged_pct(row, fileHeader)
+		unknown_pctVal = unknown_pct(row, fileHeader)
+
+
 		newList.append(popden_Val)
 		newList.append(min_pctVal) 
 		newList.append(lths_pctVal)
 		newList.append(children_pctVal) 
 		newList.append(lingiso_pctVal)
+		# Put in all 3 new ones
+		newList.append(lowinc_pctVal)
+		newList.append(aged_pctVal)
+		newList.append(unknown_pctVal)
+
 		percDict[getTractFIPS(row,fileHeader)] = newList
 		popDens_values.append(popden_Val)
 		mins_values.append(min_pctVal)
 		lths_values.append(lths_pctVal)
 		children_values.append(children_pctVal)
 		lingiso_values.append(lingiso_pctVal)
+		# Put in low_inc and aged and
+		lowinc_values.append(lowinc_pctVal)
+		aged_values.append(aged_pctVal)
+		
+
+
+
 	else: 
 		no_pop_or_no_over_25.append(getTractFIPS(row,fileHeader))
 
@@ -109,6 +160,8 @@ for filename in os.listdir(directory):
 	lths_values = []
 	children_values = []
 	lingiso_values = []
+	lowinc_values = []
+	aged_values = []
 	no_pop_or_no_over_25 = []
 	print "Reading File..."
 	with open(directory + "/"+ "EJScreen_SocioDemographic_FIPS_TRACTS_Sorted_" + curr_state + ".csv", 'rU') as f: 
@@ -132,18 +185,24 @@ for filename in os.listdir(directory):
 	feature_list.append(np.array(lths_values))
 	feature_list.append(np.array(children_values))
 	feature_list.append(np.array(lingiso_values))
+	
+	feature_list.append(np.array(lowinc_values))
+	feature_list.append(np.array(aged_values))
+
+	
 
 
 	outfile_print = []
-	perc_header = ["popdense", "percmin", "perclths", "percchildren", "perclingiso"]
-	outfile_header = ["FIPS", "popdense", "pctpopdense", "percmin", "pctmin", "perclths", "pctlths", "percchildren", "pctchildren", "perclingisohlds", "pctlingisohlds"]
+	perc_header = ["popdense", "percmin", "perclths", "percchildren", "perclingiso", "perclowinc", "percaged", "percunknownpov"]
+	outfile_header = ["FIPS", "popdense", "pctpopdense", "percmin", "pctmin", "perclths", "pctlths", "percchildren", "pctchildren", "perclingisohlds", "pctlingisohlds", "perclowinc", "pctlowinc", "percaged", "pctaged", "percunknownpov"]
 	for FIPS in percDict:
 		curr_percentages = percDict[FIPS] 
 		outfile_line = [FIPS]
 		for feature in perc_header:
 			ind = perc_header.index(feature)
 			outfile_line.append(curr_percentages[ind])
-			outfile_line.append(stats.percentileofscore(feature_list[ind], curr_percentages[ind], kind = "weak"))
+			if (feature != "percunknownpov"): # Won't lose index synchronization, b/c I put unknownpov as the last index, which gets skipped  
+				outfile_line.append(stats.percentileofscore(feature_list[ind], curr_percentages[ind], kind = "weak")) # Only applies if we need the percentile...
 		outfile_print.append(outfile_line)
 
 	# Sort the entries
@@ -151,7 +210,7 @@ for filename in os.listdir(directory):
 	outfile_print_Sorted.insert(0,outfile_header)
 
 	print "Writing " + curr_state + " Percentiles for Best Features to CSV File..."
-	outFileName = "CalEnviroScreen_tract_Children_Lingisohhlds_FeaturePercentiles_" + curr_state + ".csv"
+	outFileName = "CalEnviroScreen_tract_ALL_FEATURES_Percentiles_" + curr_state + ".csv"
 	with open(outFileName, "wb") as f:
 	    writer = csv.writer(f)
 	    writer.writerows(outfile_print_Sorted)
