@@ -30,11 +30,12 @@ def getTractFIPS_statefile(row, fileHeader):
 def getZIP(row, fileHeader):
 	return row[fileHeader.index("ZIP")]
 
-def updateDict(row, fileHeader):
-	FIPS_dict[getTractFIPS_statefile(row, fileHeader)] = row
+def updateDict(row, fileHeader, curr_state):
+	row.append(curr_state)
+	FIPS_dict[int(getTractFIPS_statefile(row, fileHeader))] = row
 
 def addZIPEntry(row, fileHeader):
-	curr_FIPS = getTractFIPS(row, fileHeader)
+	curr_FIPS = int(getTractFIPS(row, fileHeader))
 	if (curr_FIPS in FIPS_dict):
 		next_entry = list(FIPS_dict[curr_FIPS])
 		ZIP_String = str(getZIP(row, fileHeader))
@@ -74,7 +75,7 @@ for filename in os.listdir(directory): # Iterate through states...
 	    	if (iterNum == numLinesToOpen):
 	    		break
 	    	if (iterNum != 0):
-	    		updateDict(row, fileHeader)	    		
+	    		updateDict(row, fileHeader, curr_state)	    		
 	    	else:
 	    		fileHeader = row
 	        iterNum +=1
@@ -88,6 +89,7 @@ for filename in os.listdir(directory): # Iterate through states...
 # Part 2.. 
 
 outfileHeader = fileHeader # Save all the header info from the previous file... 
+outfileHeader.append("State")
 outfileHeader.append("ZIP")
 fileHeader = []
 outfile_print = []
@@ -108,7 +110,7 @@ with open("ZIP_TRACT_062015_CLEAN.csv", 'rU') as f:
 print "Fileread Complete! \n"
 
 print "Writing Mapping File, with all ZIPCODES, and corresponding FIPS Census Tracts"
-outFileName = "NATIONAL_Predicted_Pollution_Score_MAP.csv"
+outFileName = "NATIONAL_Predicted_Pollution_Score_MAP_with_State_ALABAMA35004.csv"
 with open(outFileName, "wb") as f:
     writer = csv.writer(f)
     writer.writerows(outfile_print)
